@@ -5,7 +5,7 @@ const Picture = ({photos}) => {
     return (
         <>
             <div className='my-3 p-3 rounded text-center shadow mb-5 bg-while'>
-                <Card.Img style={{width: '8rem'}}
+                <Card.Img
                           src={photos.sprites.front_default}
                 />
                 <Card.Body className={`${photos.types[0].type.name} rounded text-while`}>
