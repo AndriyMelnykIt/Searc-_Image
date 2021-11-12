@@ -9,7 +9,6 @@ const Header = () => {
                     <FormControl
                         placeholder="Поле пошуку"
                         aria-label="Username"
-                        aria-describedby="basic-addon1"
                     />
                 </Container>
             </Navbar>
