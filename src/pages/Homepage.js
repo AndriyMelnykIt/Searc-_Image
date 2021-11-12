@@ -7,7 +7,6 @@ import Picture from "../Components/Picture";
 const Homepage = () => {
 
     const [photos, setPhotos] = useState([]);
-    const [loading, setLoading] = useState(true);
 
     const getPhotosList = async () => {
         let photosArray = [];
@@ -15,7 +14,6 @@ const Homepage = () => {
             photosArray.push(await getPhotosData(i))
         }
         setPhotos(photosArray)
-        setLoading(false);
     }
 
     const getPhotosData = async (id) => {
