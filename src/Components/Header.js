@@ -9,6 +9,7 @@ const Header = () => {
                     <FormControl
                         placeholder="Поле пошуку"
                         aria-label="Username"
+
                     />
                 </Container>
             </Navbar>
