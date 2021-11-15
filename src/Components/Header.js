@@ -1,5 +1,5 @@
 import React from 'react';
-import {Navbar, Container, FormControl} from "react-bootstrap";
+import {Navbar, Container, FormControl} from 'react-bootstrap';
 
 const Header = () => {
     return (
@@ -7,8 +7,8 @@ const Header = () => {
             <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
                 <Container fluid>
                     <FormControl
-                        placeholder="Поле пошуку"
-                        aria-label="Username"
+                        placeholder='Поле пошуку'
+                        aria-label='Username'
                     />
                 </Container>
             </Navbar>
