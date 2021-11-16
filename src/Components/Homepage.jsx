@@ -38,7 +38,6 @@ const Homepage = () => {
                 </Container>
             </Navbar>
 
-
             <Row>
                 {photos.filter( result => {
                     if (search === "") {
