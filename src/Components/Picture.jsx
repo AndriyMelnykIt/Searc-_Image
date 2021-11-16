@@ -23,5 +23,4 @@ const Picture = ({photos}) => (
     </>
 );
 
-
 export default Picture;

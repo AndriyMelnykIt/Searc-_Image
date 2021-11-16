@@ -45,6 +45,7 @@ const Homepage = () => {
                     } else if (result.data.name.toLowerCase().includes(search.toLowerCase())) {
                         return result;
                     }
+                    return false;
                 }).map(p => (
                     <Col key={p.data.name} xs={12} sm={12} md={6} lg={4} xl={3}>
                         <Picture photos={p.data}/>
