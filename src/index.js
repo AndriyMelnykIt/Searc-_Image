@@ -4,10 +4,6 @@ import {Global, theme} from './styled/Global';
 import App from './App';
 import {ThemeProvider} from 'styled-components';
 
-
-
-
-
 ReactDOM.render(
     <React.StrictMode>
         <ThemeProvider theme={theme}>

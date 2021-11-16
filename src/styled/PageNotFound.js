@@ -12,5 +12,4 @@ const StylePageNotFound = styled.div`
     color: #FFFAF0;
     height: 100vh;
 `
-
 export {StylePageNotFound};

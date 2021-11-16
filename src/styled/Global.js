@@ -33,7 +33,5 @@ const theme = {
         tablet: '(max-width: 991px) and (min-width: 768px)',
         screen: '(max-width: 1199px) and (min-width: 992px)'
     }
-}
-
-
+};
 export {Global, StyleText, theme};
