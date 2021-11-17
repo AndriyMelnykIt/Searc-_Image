@@ -20,4 +20,5 @@ const Picture = ({ photos }) => (
         </div>
     </>
 );
+
 export default Picture;

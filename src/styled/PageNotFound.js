@@ -11,5 +11,6 @@ const StylePageNotFound = styled.div`
     text-shadow: 1px 2px 3px #000;
     color: #FFFAF0;
     height: 100vh;
-`
+`;
+
 export {StylePageNotFound};

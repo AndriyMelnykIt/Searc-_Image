@@ -1,4 +1,6 @@
-import styled, {createGlobalStyle} from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components';
+
+import * as palette from './variables';
 
 const Global = createGlobalStyle`
 * {
@@ -8,30 +10,30 @@ const Global = createGlobalStyle`
  }`;
 
 const StyleText = styled.div`
-    color: ${props => props.color || props.theme.colors.primary};
-    @media ${props => props.theme.media.phone} {
-       background-color: #EBC2AF;
-         color: #000;
+    color: ${ props => props.color || props.theme.colors.primary };
+    @media ${ props => props.theme.media.phone } {
+       background-color: ${palette.backroundPhone};
+       color: ${palette.darkColor};
     }
-     @media ${props => props.theme.media.tablet} {
-        background-color: #D2B48C;
-        color: #fff;
+     @media ${ props => props.theme.media.tablet } {
+        background-color: ${palette.backroundTablet};
+        color: ${palette.whiteColor};
     }
-    @media ${props => props.theme.media.screen} {
-        background: #FF3A393B;
-        color: #000;
+    @media ${ props => props.theme.media.screen } {
+        background-color: ${palette.backroundScreen};
+        color: ${palette.whiteColor};
     }
-`
+`;
 
 const theme = {
     colors: {
-        primary: '#752dbb'
-
+        primary: `${palette.purpleColor}`
     },
     media: {
-        phone: '(max-width: 767px) and (min-width: 576px)',
-        tablet: '(max-width: 991px) and (min-width: 768px)',
-        screen: '(max-width: 1199px) and (min-width: 992px)'
+        phone: `${palette.mediaPhone}`,
+        tablet: `${palette.mediaTablet}`,
+        screen: `${palette.mediaScreen}`
     }
 };
-export {Global, StyleText, theme};
+
+export { Global, StyleText, theme };

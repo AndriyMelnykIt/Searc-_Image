@@ -9,4 +9,5 @@ const PageNotFound = () => (
             <NavLink to='/'> Go Back </NavLink>
         </StylePageNotFound>
     );
+
 export default PageNotFound;
