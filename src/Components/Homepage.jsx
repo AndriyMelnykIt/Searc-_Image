@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Row, Col, Container, FormControl, Navbar } from 'react-bootstrap';
+import { Row, Col, Container, FormControl,} from 'react-bootstrap';
 
 import Picture from './Picture';
 
 import { getPhotosData } from '../api/api';
-import Header from './Header';
 
 const Homepage = () => {
 
@@ -24,9 +23,6 @@ const Homepage = () => {
 
     return (
         <>
-
-                <Container fluid>
-                    <Header/>
                     <FormControl
                         placeholder='Поле пошуку'
                         aria-label='Username'
@@ -34,7 +30,6 @@ const Homepage = () => {
                             setSearch(event.target.value)
                         }}
                     />
-                </Container>
             <Row>
                 { photos.filter( result => {
                     if (search === "") {
