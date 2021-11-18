@@ -21,7 +21,7 @@ const StyleText = styled.div`
     }
     @media ${ props => props.theme.media.screen } {
         background-color: ${palette.backroundScreen};
-        color: ${palette.whiteColor};
+        color: ${palette.darkColor};
     }
 `;
 

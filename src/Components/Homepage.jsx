@@ -4,11 +4,13 @@ import { Row, Col, Container, FormControl, Navbar } from 'react-bootstrap';
 import Picture from './Picture';
 
 import { getPhotosData } from '../api/api';
+import Header from './Header';
 
 const Homepage = () => {
 
     const [photos, setPhotos] = useState([]);
     const [search, setSearch] = useState('');
+
 
     const getPhotosList = async () => {
         let photosArray = [];
@@ -22,18 +24,17 @@ const Homepage = () => {
 
     return (
         <>
-            <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
+
                 <Container fluid>
+                    <Header/>
                     <FormControl
                         placeholder='Поле пошуку'
                         aria-label='Username'
                         onChange={ (event)=> {
                             setSearch(event.target.value)
                         }}
-                        vaule={ search }
                     />
                 </Container>
-            </Navbar>
             <Row>
                 { photos.filter( result => {
                     if (search === "") {
