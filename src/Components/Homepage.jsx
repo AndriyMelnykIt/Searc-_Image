@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Row, Col, Container, FormControl,} from 'react-bootstrap';
+import { Row, Col, FormControl } from 'react-bootstrap';
 
 import Picture from './Picture';
 

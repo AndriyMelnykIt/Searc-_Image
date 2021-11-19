@@ -13,7 +13,6 @@ const Header = () =>  (
                     </Navbar.Brand>
                     <Nav>
                         <Nav.Link><Link to='/'>Home</Link></Nav.Link>
-                        <Nav.Link><Link to='/photo'>Photo</Link></Nav.Link>
                     </Nav>
                 </Navbar>
             </StyledHeader>

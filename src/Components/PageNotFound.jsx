@@ -1,6 +1,7 @@
 import React from 'react';
-import { StylePageNotFound } from '../styled/PageNotFound';
 import { NavLink } from 'react-router-dom';
+
+import { StylePageNotFound } from '../styled/PageNotFound';
 
 const PageNotFound = () => (
         <StylePageNotFound>
