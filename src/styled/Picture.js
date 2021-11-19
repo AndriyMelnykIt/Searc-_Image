@@ -5,4 +5,4 @@ const StyledPictureCard = styled.div`
  margin: 0 auto;
 `;
 
-export {StyledPictureCard};
+export { StyledPictureCard };

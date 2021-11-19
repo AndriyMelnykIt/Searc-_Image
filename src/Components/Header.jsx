@@ -1,10 +1,10 @@
 import React from 'react';
-import {Nav, Navbar} from 'react-bootstrap';
-import {Link} from 'react-router-dom';
-import {StyledHeader} from '../styled/Header';
+import { Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-const Header = () => {
-    return (
+import { StyledHeader } from '../styled/Header';
+
+const Header = () =>  (
         <>
             <StyledHeader>
                 <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
@@ -19,7 +19,6 @@ const Header = () => {
             </StyledHeader>
         </>
     );
-};
 
 export default Header;
 

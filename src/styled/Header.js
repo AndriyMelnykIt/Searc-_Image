@@ -9,4 +9,4 @@ const StyledHeader = styled.div`
     }
 }
 `
-export {StyledHeader};
+export { StyledHeader };

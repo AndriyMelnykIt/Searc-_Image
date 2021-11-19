@@ -11,7 +11,6 @@ import Header from './Components/Header';
 const App = (props) => (
 
     <BrowserRouter>
-
             <Container fluid>
                 <Header/>
                 <StyleText{ ...props }>

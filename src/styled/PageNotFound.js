@@ -13,4 +13,4 @@ const StylePageNotFound = styled.div`
     height: 100vh;
 `;
 
-export {StylePageNotFound};
+export { StylePageNotFound };
