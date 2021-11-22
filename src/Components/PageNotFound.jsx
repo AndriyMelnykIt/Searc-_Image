@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { StylePageNotFound } from '../styled/PageNotFound';
 
 const PageNotFound = () => (
-<StylePageNotFound>
+	<StylePageNotFound>
 		<div>404 Error Page</div>
 		<NavLink to="/"> Go Back </NavLink>
 	</StylePageNotFound>

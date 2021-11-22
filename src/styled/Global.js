@@ -17,7 +17,7 @@ const StyleText = styled.div`
     }
      @media ${ (props) => props.theme.media.tablet } {
         background-color: ${ palette.backroundTablet };
-        color: ${ palette.whiteColor};
+        color: ${ palette.whiteColor };
     }
     @media ${ (props) => props.theme.media.screen } {
         background-color: ${ palette.backroundScreen };
@@ -26,14 +26,14 @@ const StyleText = styled.div`
 `;
 
 const theme = {
-  colors: {
-    primary: `${ palette.purpleColor }`,
-  },
-  media: {
-    phone: `${ palette.mediaPhone }`,
-    tablet: `${ palette.mediaTablet }`,
-    screen: `${ palette.mediaScreen }`,
-  },
+	colors: {
+		primary: `${ palette.purpleColor }`,
+	},
+	media: {
+		phone: `${ palette.mediaPhone }`,
+		tablet: `${ palette.mediaTablet }`,
+		screen: `${ palette.mediaScreen }`,
+	},
 };
 
 export { Global, StyleText, theme };

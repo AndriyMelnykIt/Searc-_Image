@@ -5,11 +5,11 @@ import { Global, theme } from './styled/Global';
 import App from './App';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <ThemeProvider theme={ theme }>
-      <Global />
-      <App />
-    </ThemeProvider>
-  </React.StrictMode>,
-  document.getElementById('root'),
+	<React.StrictMode>
+		<ThemeProvider theme={theme}>
+			<Global />
+			<App />
+		</ThemeProvider>
+	</React.StrictMode>,
+	document.getElementById('root'),
 );
