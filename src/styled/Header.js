@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
+import { blue } from './variables';
+
 const StyledHeader = styled.div`
     a, .nav-link {
-    color: #adb1b8;
-    &:hover {
-    color: white
-    text-decoration: none;
-    }
+        color: ${blue};
+        &:hover {
+            color: white
+            text-decoration: none;
+  }
 }
-`
+`;
 export { StyledHeader };
