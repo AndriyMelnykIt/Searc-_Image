@@ -8,7 +8,7 @@ const Header = () => (
 	<StyledHeader>
 		<Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
 			<Navbar.Brand>
-          Walty Photos
+				Walty Photos
 			</Navbar.Brand>
 			<Nav>
 				<Nav.Link><Link to="/">Home</Link></Nav.Link>

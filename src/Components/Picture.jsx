@@ -7,15 +7,15 @@ const Picture = ({ photos }) => (
 	<div className="my-3 p-3 rounded text-center shadow mb-5 bg-while">
 		<StyledPictureCard>
 			<div>
-				<Card.Img src={photos.sprites.front_default}/>
+				<Card.Img src={ photos.sprites.front_default } />
 			</div>
 		</StyledPictureCard>
-		<Card.Body className={`${photos.types[0].type.name} rounded text-while`}>
+		<Card.Body className={`${ photos.types[0].type.name } rounded text-while`}>
 			<Card.Title>
 				<strong>
-					{photos.id}
+					{ photos.id }
 					{' '}
-					{photos.name}
+					{ photos.name }
 				</strong>
 			</Card.Title>
 		</Card.Body>

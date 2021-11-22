@@ -5,7 +5,7 @@ module.exports = {
 	},
 	'extends': [
 		'eslint:recommended',
-		'plugin:react/recommended'
+		'plugin:react/recommended',
 	],
 	'parserOptions': {
 		'ecmaFeatures': {
@@ -27,8 +27,15 @@ module.exports = {
 			'error',
 			'single'
 		],
+		'object-curly-spacing': ['error', 'always'],
+		'react/react-in-jsx-scope': 'off',
 		'semi': [2, 'always'],
 		'no-mixed-spaces-and-tabs': 0,
 		'react/prop-types': 'off'
+	},
+	'settings': {
+		'react': {
+			'version': 'detect'
+		}
 	}
 };
