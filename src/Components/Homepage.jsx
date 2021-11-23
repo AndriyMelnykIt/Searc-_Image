@@ -1,51 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { Row, Col, FormControl } from 'react-bootstrap';
+import React from 'react';
 
-import Picture from './Picture';
+import Photos from './Photos';
 
-import { getPhotosData } from '../api';
-
-const Homepage = function () {
-	const [photos, setPhotos] = useState([]);
-	const [search, setSearch] = useState('');
-
-	const getPhotosList = async () => {
-		const photosArray = [];
-		for (let i = 1; i <= 20; i++) {
-			photosArray.push(await getPhotosData(i));
-		}
-		setPhotos(photosArray);
-	};
-
-	useEffect(() => {
-		getPhotosList();
-	}, []);
-
-	return (
-		<>
-			<FormControl
-				placeholder="Поле пошуку"
-				aria-label="Username"
-				onChange={(event) => {
-					setSearch(event.target.value);
-				}}
-			/>
-			<Row>
-				{photos.filter((result) => {
-				  if (search === '') {
-				    return result;
-				  } if (result.data.name.toLowerCase().includes(search.toLowerCase())) {
-				    return result;
-				  }
-				  return false;
-				}).map((p) => (
-					<Col key={p.data.name} xs={12} sm={12} md={6} lg={4} xl={3}>
-						<Picture photos={p.data} />
-					</Col>
-				))}
-			</Row>
-		</>
-	);
-};
+const Homepage = () => (
+	<div>
+		<Photos/>
+	</div>
+);
 
 export default Homepage;
