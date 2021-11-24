@@ -1,60 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { Col, FormControl, Row } from 'react-bootstrap';
+import React from 'react';
+import { CardGroup } from 'react-bootstrap';
 
-import { getPhotosData } from '../api';
+import { Picture, Spinner } from './AllComponents';
 
-import { Picture, Spinner } from './Pages';
+const Photos = (props) => {
+	const [photos, loading] = props;
 
-const Photos = () => {
-	const [photos, setPhotos] = useState ([]);
-	const [loading, setLoading] = useState (true);
-	const [search, setSearch] = useState ('');
-
-	const array = useSelector(state => state.array);
-	console.log (array);
-
-	const getPhotosList = async () => {
-		const photosArray = [];
-		for (let i = 1; i <= 20; i++) {
-			photosArray.push (await getPhotosData (i));
-		}
-		setLoading (false);
-		setPhotos (photosArray);
-	};
-
-	useEffect (() => {
-		getPhotosList ();
-	}, []);
-
+	if (loading) {
+		return <Spinner />;
+	}
 
 	return (
 		<div>
-			<FormControl
-				placeholder="Поле пошуку"
-				aria-label="Username"
-				onChange={(event) => {
-					setSearch (event.target.value);
-				}}
-			/>
-			{loading ? (
-				<Spinner/>
+			{photos.length ? (
+				<CardGroup>
+					{photos.map (photo => {
+						return <Picture key={photo.id} photo={photo}/>;
+					})}
+				</CardGroup>
 			) : (
-				<Row>
-					{photos.filter ((result) => {
-						if (search === '') {
-							return result;
-						}
-						if (result.data.name.toLowerCase ().includes (search.toLowerCase ())) {
-							return result;
-						}
-						return false;
-					}).map ((p) => (
-						<Col key={p.data.name} xs={12} sm={12} md={6} lg={4} xl={3}>
-							<Picture photos={p.data}/>
-						</Col>
-					))}
-				</Row>
+				<span>No photos more</span>
 			)}
 		</div>
 	);

@@ -32,7 +32,9 @@ module.exports = {
 		'semi': [2, 'always'],
 		'no-mixed-spaces-and-tabs': 0,
 		'react/prop-types': 'off',
-		'no-debugger': 'off'
+		'no-debugger': 'off',
+		'no-unused-vars': 'off',
+		'require-yield': 'off'
 	},
 	'settings': {
 		'react': {

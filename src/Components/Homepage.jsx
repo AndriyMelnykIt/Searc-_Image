@@ -1,11 +1,13 @@
 import React from 'react';
 
-import Photos from './Photos';
+import { SearchHistory, SearchPage } from './AllComponents';
 
-const Homepage = () => (
-	<div>
-		<Photos/>
-	</div>
+
+const HomePage = () => (
+	<>
+		<SearchPage />
+		<SearchHistory />
+	</>
 );
 
-export default Homepage;
+export default HomePage;

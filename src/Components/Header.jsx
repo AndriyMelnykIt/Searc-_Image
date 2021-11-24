@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar, } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import { StyledHeader } from '../styled/Header';
@@ -7,11 +7,18 @@ import { StyledHeader } from '../styled/Header';
 const Header = () => (
 	<StyledHeader>
 		<Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
-			<Navbar.Brand>
-				Walty Photos
-			</Navbar.Brand>
-			<Nav>
-				<Nav.Link><Link to="/">Home</Link></Nav.Link>
+			<Container to='/'>
+				<Navbar.Brand>
+					Walty Photos
+				</Navbar.Brand>
+			</Container>
+			<Nav className='mr-auto'>
+				<Nav.Link as={Link} to='/'>
+					Home
+				</Nav.Link>
+				<Nav.Link as={Link} to='/photos'>
+					Photos
+				</Nav.Link>
 			</Nav>
 		</Navbar>
 	</StyledHeader>

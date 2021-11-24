@@ -4,7 +4,7 @@ import { blue } from './variables';
 
 const StyledHeader = styled.div`
  a, .nav-link {
-   color: ${ blue };
+   color: ${blue};
     &:hover {
      color: white
      text-decoration: none;
