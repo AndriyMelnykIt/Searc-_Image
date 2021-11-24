@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Col, FormControl, Row } from 'react-bootstrap';
 
 import { getPhotosData } from '../api';
@@ -9,6 +10,9 @@ const Photos = () => {
 	const [photos, setPhotos] = useState ([]);
 	const [loading, setLoading] = useState (true);
 	const [search, setSearch] = useState ('');
+
+	const array = useSelector(state => state.array);
+	console.log (array);
 
 	const getPhotosList = async () => {
 		const photosArray = [];

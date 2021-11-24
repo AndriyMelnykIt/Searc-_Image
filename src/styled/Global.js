@@ -25,6 +25,7 @@ const StyleText = styled.div`
     }
 `;
 
+debugger;
 const theme = {
 	colors: {
 		primary: `${palette.purpleColor}`,

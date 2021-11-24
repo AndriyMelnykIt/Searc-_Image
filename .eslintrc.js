@@ -31,11 +31,12 @@ module.exports = {
 		'react/react-in-jsx-scope': 'off',
 		'semi': [2, 'always'],
 		'no-mixed-spaces-and-tabs': 0,
-		'react/prop-types': 'off'
+		'react/prop-types': 'off',
+		'no-debugger': 'off'
 	},
 	'settings': {
 		'react': {
 			'version': 'detect'
-		}
-	}
+		},
+	},
 };
