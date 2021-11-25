@@ -1,5 +1,4 @@
 export { default as HomePage } from './HomePage';
-export { default as PageNotFound } from './PageNotFound';
 export { default as Picture } from './Picture';
 export { default as Header } from './Header';
 export { default as Photos } from './Photos';

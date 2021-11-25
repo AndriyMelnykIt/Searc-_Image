@@ -1,7 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import { photos } from './ducks/ducksGeneration';
 import reducer from './ducks/reducer';
+
+import { photos } from './ducks/ducksGeneration';
 
 const reduxDevtools = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const sagaMiddleware = createSagaMiddleware();

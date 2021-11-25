@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardGroup } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -17,11 +17,11 @@ const Photos = (props) => {
 			{photos.length ? (
 				<Card className='mb-3'>
 					{photos.map (photo => {
-						return <Picture key={photo.id} photo={photo}/>;
+						return <Picture key={photo.id} photo={photo} />;
 					})}
 				</Card>
 			) : (
-				<span>No photos more</span>
+				<span>No picture</span>
 			)}
 		</div>
 	);

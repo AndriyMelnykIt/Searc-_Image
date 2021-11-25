@@ -6,7 +6,7 @@ import { Header } from './AllComponents';
 const Pages = (props) => (
 	<>
 		<Container>
-			<Header/>
+			<Header />
 			{props.children}
 		</Container>
 	</>
