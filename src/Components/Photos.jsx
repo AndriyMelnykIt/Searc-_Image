@@ -1,25 +1,25 @@
 import React from 'react';
-import { CardGroup } from 'react-bootstrap';
+import { Card, CardGroup } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { Picture, Spinner } from './AllComponents';
 
 const Photos = (props) => {
-	const [photos, loading] = props;
+	const { photos, loading } = props;
 
 	if (loading) {
-		return <Spinner/>;
+		return <Spinner />;
 	}
 
 	return (
 		<div>
 			{photos.length ? (
-				<CardGroup>
+				<Card className='mb-3'>
 					{photos.map (photo => {
 						return <Picture key={photo.id} photo={photo}/>;
 					})}
-				</CardGroup>
+				</Card>
 			) : (
 				<span>No photos more</span>
 			)}

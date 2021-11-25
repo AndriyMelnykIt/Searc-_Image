@@ -9,9 +9,9 @@ const SearchHistory = ({ searchLast }) => {
 			{!searchLast.length && <p>No more photos</p>}
 			{searchLast.length > 0 && (
 				<>
-					<p>Search:</p>
-					{searchLast.map ((search, i) => (
-						<Card className="mt-3" key={i}>
+					<p>History:</p>
+					{searchLast.map((search, i) => (
+						<Card className="mt-3" body key={i}>
 							{search.map ((tag, index) => (
 								<Badge variant="primary" className="mr-2" key={index}>
 									{tag}

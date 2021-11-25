@@ -1,6 +1,5 @@
 import axios from '../../api';
 import { call, takeEvery, select, put } from 'redux-saga/effects';
-import { combineReducers } from 'redux';
 
 //ACTIONS TYPES
 export const SENT_REQ = 'SENT_REQ';
@@ -16,7 +15,7 @@ export const initialState = {
 	error: null
 };
 
-export default function reducer (state = initialState, action) {
+export default (state = initialState, action) => {
 	switch (action.type) {
 	case SENT_REQ:
 		let newSearch;
@@ -30,14 +29,12 @@ export default function reducer (state = initialState, action) {
 	case REQ_FAILURE:
 		return { ...state, loading: false, error: action.payload };
 	case REQ_SUCCESS:
-		return { ...state, loading: false, photos: [...action.payload] };
+		return { ...state, loading: false, photos: [ ...action.payload ] };
+	default:
+		return state;
 	}
-	return state;
-}
+};
 
-const rootReducer = combineReducers ({
-	reducer
-});
 
 // ACTIONS CREATOR
 export const reqPhoto = tags => {
@@ -64,18 +61,25 @@ export const reqPhotoSuccess = photos => {
 //ROOT SAGA
 const getTags = state => state.reducer.tags;
 
+// async function getPicture () {
+// 	const request = await fetch('https://pixabay.com/api/?key=15222162-80f11fbf748cd9bfec3f11d63&q=&image_type=photo&per_page=40');
+// 	const data = await request.json();
+// 	return data;
+// }
+
 export function* getPhotosData () {
 	const tags = yield select (getTags);
 	let response = yield call (
 		axios.get,
-		`?key=24503228-963a8e7a1e1e9e6e353c6685d=${tags.join ()}&image_type=photo&per_page=40`
+		`?key=15222162-80f11fbf748cd9bfec3f11d63&q=${tags.join ('+')}&image_type=photo&per_page=40`
 	);
+
+
 	if (response.status === 200) {
 		yield put (reqPhotoSuccess (response.data));
 	} else {
 		yield put (failurePhoto ('error'));
 	}
-
 }
 
 //SAGA WATCHERS

@@ -35,7 +35,7 @@ module.exports = {
 		'no-debugger': 'off',
 		'no-unused-vars': 'off',
 		'require-yield': 'off',
-		'no-case-declarations': 'off'
+		'no-case-declarations': 'off',
 	},
 	'settings': {
 		'react': {
