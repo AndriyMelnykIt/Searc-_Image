@@ -1,23 +1,17 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { StyleText } from './styled/Global';
+import { PhotosPage, HomePage, Pages } from './Components/AllComponents';
 
-import { Header, PageNotFound, Homepage } from './Components/AllComponents';
-import PhotosPage from './Components/PhotosPage';
-import HomePage from './Components/HomePage';
-
-const App = (props) => {
-
+const App = () => {
 	return (
 		<BrowserRouter>
-			<Container fluid>
+			<Pages>
 				<Switch>
 					<Route path="/" exact component={HomePage}/>
 					<Route path="/photos" component={PhotosPage}/>
 				</Switch>
-			</Container>
+			</Pages>
 		</BrowserRouter>
 	);
 };

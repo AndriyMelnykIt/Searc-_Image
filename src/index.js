@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import { ThemeProvider } from 'styled-components';
-import { theme } from './styled/Global';
+import { Provider } from 'react-redux';
 
-ReactDOM.render(
+import App from './App';
+import store from './redux/store';
+
+ReactDOM.render (
 	<React.StrictMode>
-		<ThemeProvider theme={theme}>
-			<App />
-		</ThemeProvider>
+		<Provider store={store}>
+			<App/>
+		</Provider>
 	</React.StrictMode>,
-	document.getElementById('root'),
+	document.getElementById ('root'),
 );

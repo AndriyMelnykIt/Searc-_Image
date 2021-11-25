@@ -34,7 +34,8 @@ module.exports = {
 		'react/prop-types': 'off',
 		'no-debugger': 'off',
 		'no-unused-vars': 'off',
-		'require-yield': 'off'
+		'require-yield': 'off',
+		'no-case-declarations': 'off'
 	},
 	'settings': {
 		'react': {
