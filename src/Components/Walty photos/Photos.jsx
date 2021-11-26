@@ -1,8 +1,8 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import StyledPhotos from '../../styled/Photos';
 import { Picture, Spinner } from '../index';
 
 const Photos = (props) => {
@@ -15,11 +15,11 @@ const Photos = (props) => {
     return (
         <div>
             {photos.length ? (
-                <Card className="mb-3">
+                <StyledPhotos className="mb-3" xs={12} sm={12} md={6} xl={3} >
                     {photos.map (photo => {
                         return <Picture key={photo.id} photo={photo}/>;
                     })}
-                </Card>
+                </StyledPhotos>
             ) : (
                 <span>No picture</span>
             )}

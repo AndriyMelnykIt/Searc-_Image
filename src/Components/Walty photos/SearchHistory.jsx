@@ -11,9 +11,9 @@ const SearchHistory = ({ searchLast }) => (
                 <p>History:</p>
                 {searchLast.map ((search, i) => (
                     <Card className="mt-3" body key={i}>
-                        {search.map ((tag, index) => (
-                            <Badge variant="primary" className="mr-2" key={index}>
-                                {tag}
+                        {search.map ((tags, index) => (
+                            <Badge bg="light" className="mr-2" key={index}>
+                                {tags}
                             </Badge>
                         ))}
                     </Card>
