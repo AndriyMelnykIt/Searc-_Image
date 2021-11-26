@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import { Button, Row } from 'react-bootstrap';
 import TagsInput from 'react-tagsinput';
 
-import { reqPhoto } from '../redux/ducks/ducksGeneration';
-import { StyledSearchPage } from '../styled/SearchPage';
+import { reqPhoto } from '../../redux/ducks/Walty Photos';
+import { StyledSearchPage } from '../../styled/SearchPage';
 
 const SearchPage = (props) => {
 	const [tags, setTags] = useState ([]);
@@ -21,14 +21,13 @@ const SearchPage = (props) => {
 			props.SearchPage (tags);
 			history.push ('/photos');
 		}
-		return;
 	};
 
 	return (
 		<StyledSearchPage>
 			<TagsInput value={tags} onChange={handleClick}/>
-			<Row className='justify-content-md-center'>
-				<Button className='mt-2' size='lg' onClick={handleSearch}>Search</Button>
+			<Row className="justify-content-md-center">
+				<Button className="mt-2" size="lg" onClick={handleSearch}>Search</Button>
 			</Row>
 		</StyledSearchPage>
 	);
@@ -43,4 +42,5 @@ const mapStateToProps = dispatch => ({
 		dispatch (reqPhoto (tags));
 	}
 });
+
 export default connect (null, mapStateToProps) (SearchPage);

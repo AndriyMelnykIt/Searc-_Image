@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Picture = ({ photo }) => (
 	<Card>
-		<Card.Img variant='top' src={photo.webformatURL}/>
+		<Card.Img variant="top" src={photo.webformatURL}/>
 	</Card>
 );
 

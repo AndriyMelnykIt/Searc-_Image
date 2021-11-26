@@ -15,11 +15,11 @@ export const initialState = {
 	error: null
 };
 
-export default (state = initialState, action) => {
+export default function rootReducer (state = initialState, action) {
 	switch (action.type) {
 	case SENT_REQ:
 		let newSearch;
-		if (state.searchLast.length === 3) {
+		if (state.searchLast.length === 4) {
 			newSearch = [...state.searchLast, action.payload];
 			newSearch.shift ();
 		} else {
@@ -33,7 +33,7 @@ export default (state = initialState, action) => {
 	default:
 		return state;
 	}
-};
+}
 
 
 // ACTIONS CREATOR
@@ -59,16 +59,16 @@ export const reqPhotoSuccess = photos => {
 };
 
 //ROOT SAGA
-const getTags = state => state.reducer.tags;
+const getTags = state => state.rootReducer.tags;
 
 export function* getPhotosData () {
 	const tags = yield select (getTags);
 	let response = yield call (
 		axios.get,
-		`?key=15222162-80f11fbf748cd9bfec3f11d63&q=${tags.join ('+')}&image_type=photo&per_page=40`
+		`?key=24503228-963a8e7a1e1e9e6e353c6685d&q=${tags.join ('+')}&image_type=photo&per_page=40`
 	);
 	if (response.status === 200) {
-		yield put (reqPhotoSuccess (response.data));
+		yield put (reqPhotoSuccess (response.data.hits));
 	} else {
 		yield put (failurePhoto ('error'));
 	}
@@ -78,4 +78,3 @@ export function* getPhotosData () {
 export function* photos () {
 	yield takeEvery (SENT_REQ, getPhotosData);
 }
-

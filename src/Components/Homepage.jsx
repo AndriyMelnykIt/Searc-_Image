@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SearchHistory, SearchPage } from './AllComponents';
+import { SearchHistory, SearchPage } from './index';
 
 const HomePage = () => (
 	<>

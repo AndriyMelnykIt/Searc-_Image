@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Photos } from './AllComponents';
+import { Photos } from './index';
 
 const PhotosPage = () => {
 	return <Photos />;
