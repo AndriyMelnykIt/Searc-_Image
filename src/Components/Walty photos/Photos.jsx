@@ -31,10 +31,11 @@ Photos.propTypes = {
 	photos: PropTypes.array.isRequired,
 	loading: PropTypes.bool
 };
-const mapStateToProps = state => ({
+const mapStateToProps = state => {
+	return {
 	photos: state.rootReducer.photos,
 	loading: state.rootReducer.loading
-	}
-);
+	};
+};
 
 export default connect (mapStateToProps, null) (Photos);

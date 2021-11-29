@@ -7,14 +7,14 @@ import { Button, Row } from 'react-bootstrap';
 import TagsInput from 'react-tagsinput';
 
 import { StyledSearchPage } from '../../styled/SearchPage';
-import { reqPhoto } from '../../redux/ducks/WaltyPhotos';
+import { reqPhoto } from '../../redux/ducks/Walty Photos';
 
 const SearchPage = (props) => {
 	const [tags, setTags] = useState ([]);
 	const history = useHistory ();
 
 	const handleClick = tags => {
-		setTags (tags);
+		setTags(tags);
 	};
 
 	const handleSearch = () => {
