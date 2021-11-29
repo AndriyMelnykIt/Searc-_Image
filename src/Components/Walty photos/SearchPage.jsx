@@ -7,7 +7,7 @@ import { Button, Row } from 'react-bootstrap';
 import TagsInput from 'react-tagsinput';
 
 import { StyledSearchPage } from '../../styled/SearchPage';
-import { reqPhoto } from '../../redux/ducks/Walty Photos';
+import { reqPhoto } from '../../redux/ducks/WaltyPhotos';
 
 const SearchPage = (props) => {
 	const [tags, setTags] = useState ([]);
