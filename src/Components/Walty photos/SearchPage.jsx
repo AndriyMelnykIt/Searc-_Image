@@ -14,7 +14,7 @@ const SearchPage = (props) => {
 	const history = useHistory ();
 
 	const handleClick = tags => {
-		setTags(tags);
+		setTags (tags);
 	};
 
 	const handleSearch = () => {

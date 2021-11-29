@@ -8,12 +8,12 @@ const sagaMiddleware = createSagaMiddleware ();
 const middleware = [sagaMiddleware];
 
 const WallyReducer = combineReducers ({
-    rootReducer
+	rootReducer
 });
 
 export const store = createStore (
-    WallyReducer,
-    reduxDevtools (applyMiddleware (...middleware))
+	WallyReducer,
+	reduxDevtools (applyMiddleware (...middleware))
 );
 
 sagaMiddleware.run (photos);
