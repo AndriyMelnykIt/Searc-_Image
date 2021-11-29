@@ -6,4 +6,3 @@ export { default as Spinner } from './Spinner';
 export { default as Pages } from './Pages';
 export { default as SearchPage } from './Walty photos/SearchPage';
 export { default as SearchHistory } from './Walty photos/SearchHistory';
-export { default as PhotosPage } from './PhotosPage';

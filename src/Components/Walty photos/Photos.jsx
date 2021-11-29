@@ -15,7 +15,7 @@ const Photos = (props) => {
     return (
         <div>
             {photos.length ? (
-                <StyledPhotos className="mb-3" xs={12} sm={12} md={6} xl={3} >
+                <StyledPhotos className="mb-3" xs={12} sm={12} md={6} xl={3}>
                     {photos.map (photo => {
                         return <Picture key={photo.id} photo={photo}/>;
                     })}
@@ -31,11 +31,10 @@ Photos.propTypes = {
     photos: PropTypes.array.isRequired,
     loading: PropTypes.bool
 };
-const mapStateToProps = state => {
-    return {
+const mapStateToProps = state => ({
         photos: state.rootReducer.photos,
         loading: state.rootReducer.loading
-    };
-};
+    }
+);
 
 export default connect (mapStateToProps, null) (Photos);
