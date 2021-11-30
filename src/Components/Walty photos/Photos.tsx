@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import StyledPhotos from '../../styled/Photos';
 import { Picture, Spinner } from '../index';
 
-const Photos = (props) => {
+const Photos = (props: { photos: any; loading: any; }) => {
     const { photos, loading } = props;
 
     if (loading) {
@@ -15,8 +15,9 @@ const Photos = (props) => {
     return (
         <div>
             {photos.length ? (
-                <StyledPhotos className="mb-3" xs={12} sm={12} md={6} xl={3} >
-                    {photos.map (photo => {
+                <StyledPhotos className="mb-3">
+                    {photos.map((photo: { id: React.Key | null | undefined; }):any => {
+                        // @ts-ignore
                         return <Picture key={photo.id} photo={photo}/>;
                     })}
                 </StyledPhotos>
@@ -31,11 +32,12 @@ Photos.propTypes = {
     photos: PropTypes.array.isRequired,
     loading: PropTypes.bool
 };
-const mapStateToProps = state => {
+
+const mapStateToProps = (state: { rootReducer: { photos: any; loading: boolean; }; }) => {
     return {
-        photos: state.rootReducer.photos,
-        loading: state.rootReducer.loading
+    photos: state.rootReducer.photos,
+    loading: state.rootReducer.loading
     };
 };
 
-export default connect (mapStateToProps, null) (Photos);
+export default connect(mapStateToProps, null)(Photos);

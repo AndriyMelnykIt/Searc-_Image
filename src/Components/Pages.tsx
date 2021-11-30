@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 
 import { Header } from './index';
 
-const Pages = (props) => (
+const Pages = (props:any) => (
 	<>
 		<Container>
 			<Header/>

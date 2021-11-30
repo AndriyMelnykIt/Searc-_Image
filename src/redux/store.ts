@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
-import rootReducer, { photos } from './ducks/WaltyPhotos';
+import { photos, rootReducer } from './ducks/WaltyPhotos';
 
-const reduxDevtools = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const reduxDevtools = (window && (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 const sagaMiddleware = createSagaMiddleware ();
 const middleware = [sagaMiddleware];
 
@@ -13,7 +13,7 @@ const WallyReducer = combineReducers ({
 
 export const store = createStore (
     WallyReducer,
-    reduxDevtools (applyMiddleware (...middleware))
+    reduxDevtools  (applyMiddleware (...middleware))
 );
 
 sagaMiddleware.run (photos);

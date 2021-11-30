@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { PhotosPage, HomePage, Pages } from './Components';
+import { HomePage, Pages, Photos } from './Components';
 import { Container } from 'react-bootstrap';
 
 const App = () => {
@@ -11,7 +11,7 @@ const App = () => {
                 <Pages>
                     <Switch>
                         <Route path="/" exact component={HomePage}/>
-                        <Route path="/photos" component={PhotosPage}/>
+                        <Route path="/photos" component={Photos}/>
                     </Switch>
                 </Pages>
             </Container>

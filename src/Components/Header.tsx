@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 import { StyledHeader } from '../styled/Header';
 
-
 const Header = () => (
     <StyledHeader>
         <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>

@@ -23,7 +23,6 @@ module.exports = {
 			'error',
 			'single'
 		],
-		'object-curly-spacing': ['error', 'always'],
 		'react/react-in-jsx-scope': 'off',
 		'semi': [2, 'always'],
 		'no-mixed-spaces-and-tabs': 0,
@@ -32,6 +31,8 @@ module.exports = {
 		'no-unused-vars': 'off',
 		'require-yield': 'off',
 		'no-case-declarations': 'off',
+		// eslint-disable-next-line no-dupe-keys
+		'object-curly-spacing': 'off'
 	},
 	'settings': {
 		'react': {
