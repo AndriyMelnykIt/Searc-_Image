@@ -6,7 +6,7 @@ import StyledPhotos from '../../styled/Photos';
 import { Picture, Spinner } from '../index';
 
 const Photos = (props: { photos: any; loading: any; }) => {
-    const { photos, loading } = props;
+    const {photos, loading} = props;
 
     if (loading) {
         return <Spinner/>;
@@ -16,7 +16,7 @@ const Photos = (props: { photos: any; loading: any; }) => {
         <div>
             {photos.length ? (
                 <StyledPhotos className="mb-3">
-                    {photos.map((photo: { id: React.Key | null | undefined; }):any => {
+                    {photos.map((photo: { id: React.Key | null | undefined; }): any => {
                         // @ts-ignore
                         return <Picture key={photo.id} photo={photo}/>;
                     })}
@@ -35,8 +35,8 @@ Photos.propTypes = {
 
 const mapStateToProps = (state: { rootReducer: { photos: any; loading: boolean; }; }) => {
     return {
-    photos: state.rootReducer.photos,
-    loading: state.rootReducer.loading
+        photos: state.rootReducer.photos,
+        loading: state.rootReducer.loading
     };
 };
 

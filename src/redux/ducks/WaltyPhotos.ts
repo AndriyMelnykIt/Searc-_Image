@@ -46,7 +46,7 @@ export const rootReducer = (state = initialState, action: PhotoAction): PhotoSta
         default:
             return state;
     }
-}
+};
 
 // ACTIONS CREATOR
 export const reqPhoto = (tags: any) => {
@@ -74,13 +74,14 @@ export const reqPhotoSuccess = (photos: any) => {
 const getTags = (state: { rootReducer: { tags: any; }; }) => state.rootReducer.tags;
 
 interface Interface {
-    
+
 }
+
 export function* getPhotosData(): string | any {
     const tags = yield select(getTags);
     let response = yield call(
         axios.get,
-            `?key=24503228-963a8e7a1e1e9e6e353c6685d&q=${tags.join('+')}&image_type=photo&per_page=42`
+        `?key=24503228-963a8e7a1e1e9e6e353c6685d&q=${tags.join('+')}&image_type=photo&per_page=42`
     );
     if (response.status === 200) {
         yield put(reqPhotoSuccess(response.data.hits));

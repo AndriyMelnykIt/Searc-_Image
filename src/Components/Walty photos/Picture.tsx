@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import StyledPicture from '../../styled/Picture';
 
-const Picture = ({photo}:any) => (
+const Picture = ({photo}: any) => (
     <Card>
         <StyledPicture>
             <Card.Img variant="top" src={photo.webformatURL}/>

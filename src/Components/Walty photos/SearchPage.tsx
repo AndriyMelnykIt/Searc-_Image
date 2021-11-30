@@ -10,11 +10,11 @@ import TagsInput from 'react-tagsinput';
 import { StyledSearchPage } from '../../styled/SearchPage';
 import { reqPhoto } from '../../redux/ducks/WaltyPhotos';
 
-const SearchPage = (props:any) => {
+const SearchPage = (props: any) => {
     const [tags, setTags] = useState([]);
     const history = useHistory();
 
-    const handleClick = (tags:any) => {
+    const handleClick = (tags: any) => {
         setTags(tags);
     };
 
