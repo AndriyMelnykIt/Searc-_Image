@@ -4,7 +4,7 @@ import * as palette from './variables';
 
 const Global = createGlobalStyle`
 * {
-    margin: 0;
+	margin: 0;
     padding: 0;
     box-sizing: border-box;
  }`;
@@ -25,14 +25,14 @@ const StyleText = styled.div`
     }
 `;
 const theme = {
-	colors: {
-		primary: `${palette.purpleColor}`,
-	},
-	media: {
-		phone: `${palette.mediaPhone}`,
-		tablet: `${palette.mediaTablet}`,
-		screen: `${palette.mediaScreen}`,
-	},
+    colors: {
+        primary: `${palette.purpleColor}`,
+    },
+    media: {
+        phone: `${palette.mediaPhone}`,
+        tablet: `${palette.mediaTablet}`,
+        screen: `${palette.mediaScreen}`,
+    },
 };
 
 export { Global, StyleText, theme };

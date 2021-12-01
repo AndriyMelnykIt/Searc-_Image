@@ -1,6 +1,5 @@
 import React from 'react';
 import { Badge, Card } from 'react-bootstrap';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 const SearchHistory = ({ searchLast }) => (
@@ -9,9 +8,9 @@ const SearchHistory = ({ searchLast }) => (
         {searchLast.length > 0 && (
             <>
                 <p>History:</p>
-                {searchLast.map ((search, i) => (
+                {searchLast.map((search: string[], i: number) => (
                     <Card className="mt-3" body key={i}>
-                        {search.map ((tags, index) => (
+                        {search.map((tags: string, index: number) => (
                             <Badge bg="light" className="mr-2" key={index}>
                                 {tags}
                             </Badge>
@@ -23,12 +22,8 @@ const SearchHistory = ({ searchLast }) => (
     </>
 );
 
-SearchHistory.propTypes = {
-    searchLast: PropTypes.array.isRequired
-};
-
-const mapStateToProps = state => ({
+const mapStateToProps = (state: { rootReducer: { searchLast: string }; }) => ({
     searchLast: state.rootReducer.searchLast
 });
 
-export default connect (mapStateToProps, null) (SearchHistory);
+export default connect(mapStateToProps, null)(SearchHistory);

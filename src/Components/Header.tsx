@@ -7,7 +7,7 @@ import { StyledHeader } from '../styled/Header';
 const Header = () => (
     <StyledHeader>
         <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
-            <Container to="/">
+            <Container>
                 <Navbar.Brand>
                     Wally Photos
                 </Navbar.Brand>
