@@ -31,7 +31,6 @@ module.exports = {
 		'no-unused-vars': 'off',
 		'require-yield': 'off',
 		'no-case-declarations': 'off',
-		// eslint-disable-next-line no-dupe-keys
 		'object-curly-spacing': 'off'
 	},
 	'settings': {

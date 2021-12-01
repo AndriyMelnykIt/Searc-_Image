@@ -7,7 +7,7 @@ const StyledHeader = styled.div`
     .nav-link {
     color: ${blue};
     &:hover {
-    color: white
+    color: red;
     text-decoration: none;
   }
 }

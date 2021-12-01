@@ -5,7 +5,7 @@ import { SearchHistory, SearchPage } from './index';
 const HomePage = () => (
     <>
         <SearchPage/>
-        <SearchHistory/>
+        <SearchHistory searchLast={null} />
     </>
 );
 

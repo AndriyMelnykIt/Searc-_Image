@@ -1,5 +1,6 @@
 import axios from '../../api';
 import { call, takeEvery, select, put } from 'redux-saga/effects';
+import { SagaIterator } from 'redux-saga';
 
 //ACTIONS TYPES
 export const SENT_REQ = 'SENT_REQ';
@@ -12,23 +13,29 @@ interface PhotoAction {
 }
 
 // REDUCER
-interface PhotoState {
-    photos: any[],
-    tags: any[],
+export interface tagsType {
+    tags: string[]
+}
+
+export interface PhotoState {
+    photos: string[],
+    photo: string[],
+    tags: string[],
     loading: boolean,
-    searchLast: any[],
-    error: null | string
+    searchLast: string[],
+    error: null | string,
 }
 
 export const initialState: PhotoState = {
+    photo: [],
     photos: [],
     tags: [],
     loading: false,
     searchLast: [],
-    error: null
+    error: null,
 };
 
-export const rootReducer = (state = initialState, action: PhotoAction): PhotoState => {
+export const rootReducer = (state: PhotoState = initialState, action: PhotoAction): PhotoState => {
     switch (action.type) {
         case SENT_REQ:
             let newSearch;
@@ -49,39 +56,29 @@ export const rootReducer = (state = initialState, action: PhotoAction): PhotoSta
 };
 
 // ACTIONS CREATOR
-export const reqPhoto = (tags: any) => {
-    return {
-        type: SENT_REQ,
-        payload: tags
-    };
-};
+export const reqPhoto = (tags: string[]) => ({
+    type: SENT_REQ,
+    payload: tags
+});
 
-export const failurePhoto = (error: null | string) => {
-    return {
-        type: REQ_FAILURE,
-        payload: error
-    };
-};
+export const failurePhoto = (error: null | string) => ({
+    type: REQ_FAILURE,
+    payload: error
+});
 
-export const reqPhotoSuccess = (photos: any) => {
-    return {
-        type: REQ_SUCCESS,
-        payload: photos
-    };
-};
+export const reqPhotoSuccess = (photos: string) => ({
+    type: REQ_SUCCESS,
+    payload: photos
+});
 
 //ROOT SAGA
-const getTags = (state: { rootReducer: { tags: any; }; }) => state.rootReducer.tags;
+const getTags = (state: { rootReducer: { tags: tagsType; }; }) => state.rootReducer.tags;
 
-interface Interface {
-
-}
-
-export function* getPhotosData(): string | any {
+export function* getPhotosData(): SagaIterator {
     const tags = yield select(getTags);
     let response = yield call(
         axios.get,
-        `?key=24503228-963a8e7a1e1e9e6e353c6685d&q=${tags.join('+')}&image_type=photo&per_page=42`
+        `?key=24503228-963a8e7a1e1e9e6e353c6685d&q=${tags.join('+')}&image_type=photo&per_page`
     );
     if (response.status === 200) {
         yield put(reqPhotoSuccess(response.data.hits));

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import 'react-tagsinput/react-tagsinput.css';
 import { useHistory } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import { Button, Row } from 'react-bootstrap';
 // @ts-ignore
 import TagsInput from 'react-tagsinput';
@@ -10,17 +9,22 @@ import TagsInput from 'react-tagsinput';
 import { StyledSearchPage } from '../../styled/SearchPage';
 import { reqPhoto } from '../../redux/ducks/WaltyPhotos';
 
-const SearchPage = (props: any) => {
+interface propsType {
+    SearchPicture: (text: string[]) => void;
+}
+
+const SearchPage = ({SearchPicture}: propsType ) => {
     const [tags, setTags] = useState([]);
     const history = useHistory();
 
-    const handleClick = (tags: any) => {
+    const handleClick = (tags:string[]) => {
+        // @ts-ignore
         setTags(tags);
     };
 
     const handleSearch = () => {
         if (tags.length) {
-            props.SearchPicture(tags);
+            SearchPicture(tags);
             history.push('/photos');
         }
     };
@@ -35,12 +39,8 @@ const SearchPage = (props: any) => {
     );
 };
 
-SearchPage.propTypes = {
-    SearchPicture: PropTypes.func.isRequired
-};
-
-const mapStateToProps = (dispatch: (arg0: { type: string; payload: any; }) => void) => ({
-    SearchPicture: (tags: any) => {
+const mapStateToProps = (dispatch: (arg0: { type: string }) => void) => ({
+    SearchPicture: (tags: string[]) => {
         dispatch(reqPhoto(tags));
     }
 });
