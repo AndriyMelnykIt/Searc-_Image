@@ -1,8 +1,9 @@
+import React from 'react';
 import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { Provider } from 'react-redux';
 
-import { Spinner } from '../Components';
+import { Spinner } from '../Components/index';
 
 import { store } from '../redux/store';
 
