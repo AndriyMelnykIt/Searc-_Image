@@ -2,9 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import StyledPhotos from '../../styled/Photos';
+
 import { Picture, Spinner } from '../index';
 
-const Photos = (props: { photos: string[]; loading: string[]; }) => {
+type propsType = {
+    photos: string[],
+    loading: string[]
+}
+
+const Photos = (props: propsType) => {
     const {photos, loading} = props;
 
     if (loading) {
