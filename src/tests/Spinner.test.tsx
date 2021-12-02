@@ -10,7 +10,6 @@ configure({adapter: new Adapter()});
 
 let wrapper: any;
 
-
 describe('Spinner', () => {
 
     beforeAll(() => {
