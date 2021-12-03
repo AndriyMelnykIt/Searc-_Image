@@ -35,7 +35,7 @@ export const initialState: PhotoState = {
     error: null,
 };
 
-export const rootReducer = (state: PhotoState = initialState, action: PhotoAction): PhotoState => {
+export const rootReducer = (state: PhotoState = initialState, action): PhotoState => {
     switch (action.type) {
         case SENT_REQ:
             let newSearch;
@@ -56,7 +56,7 @@ export const rootReducer = (state: PhotoState = initialState, action: PhotoActio
 };
 
 // ACTIONS CREATOR
-export const reqPhoto = (tags: string[]) => ({
+export const reqPhoto = (tags: string) => ({
     type: SENT_REQ,
     payload: tags
 });
