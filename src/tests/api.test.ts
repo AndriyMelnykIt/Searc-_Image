@@ -8,4 +8,4 @@ describe('api', () => {
         expect(data).toStrictEqual(mock);
     });
 
-})
+});

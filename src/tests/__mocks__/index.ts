@@ -7,4 +7,4 @@ export const mockedStore: PhotoState = {
     loading: false,
     searchLast: [],
     error: null,
-}
+};

@@ -3,23 +3,23 @@ import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { Provider } from 'react-redux';
 
-import { Picture } from '../../Components/index';
+import { Picture } from '../../Components';
 
 import { store } from '../../redux/store';
 
 configure({adapter: new Adapter()});
 
-const photo ={
+const photo = {
     photo: '',
     webformatURL: ''
-}
+};
 
-let wrapper: any;
+let wrapper: string;
 
 describe('SearchHistory', () => {
 
     beforeAll(() => {
-        wrapper = shallow(<Provider store={store} ><Picture photo={photo}  /></Provider>);
+        wrapper = shallow(<Provider store={store}><Picture photo={photo}/></Provider>);
     });
 
     it('should take a snapshot', () => {

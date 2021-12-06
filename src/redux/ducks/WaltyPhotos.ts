@@ -17,6 +17,10 @@ export interface tagsType {
     tags: string[]
 }
 
+export interface loadingType {
+    tags: boolean
+}
+
 export interface PhotoState {
     photos: string[],
     photo: string[],
@@ -56,7 +60,7 @@ export const rootReducer = (state: PhotoState = initialState, action): PhotoStat
 };
 
 // ACTIONS CREATOR
-export const reqPhoto = (tags: string) => ({
+export const reqPhoto = (tags: any) => ({
     type: SENT_REQ,
     payload: tags
 });
@@ -72,7 +76,7 @@ export const reqPhotoSuccess = (photos: string) => ({
 });
 
 //ROOT SAGA
-const getTags = (state: { rootReducer: { tags: tagsType; }; }) => state.rootReducer.tags;
+export const getTags = (state: { rootReducer: { tags: tagsType; }; }) => state.rootReducer.tags;
 
 export function* getPhotosData(): SagaIterator {
     const tags = yield select(getTags);

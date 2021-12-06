@@ -9,13 +9,13 @@ import { store } from '../redux/store';
 
 configure({adapter: new Adapter()});
 
-let wrapper: any;
+let wrapper: string;
 
 describe('App', () => {
 
     beforeAll(() => {
-        wrapper = shallow(<Provider store={store}> <App /></Provider>);
-    })
+        wrapper = shallow(<Provider store={store}> <App/></Provider>);
+    });
 
     it('should take a snapshot', () => {
         expect(wrapper).toMatchSnapshot();
